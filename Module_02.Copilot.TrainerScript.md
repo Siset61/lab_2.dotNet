@@ -163,11 +163,29 @@ Say:
 
 "And now we'll start Exercise 5."
 
-While Copilot creates the mode file (optional filler):
+While Copilot creates the mode file (optional filler - say some of these while it runs):
 
-"The goal is not magic. It's repeatability: the mode encodes a persona and a checklist so reviews are consistent."
+"This prompt is intentionally long. It's not just asking Copilot to write text; it's defining a specialist that you can reuse."
 
-"After creating it, make sure it appears in the mode selector. If it doesn't, reload VS Code."
+"Notice the structure of the prompt:"
+
+"- The YAML header defines the mode metadata: a description and which tools it can use. Think of tools as permissions: what the assistant is allowed to do."
+
+"- The body defines three things: a persona, domain knowledge, and a quality checklist. That's how we make behavior consistent across conversations."
+
+"When you create this kind of specialist, make it concrete: include the vocabulary of your system and what 'good' looks like. Otherwise the assistant will drift to generic advice."
+
+"Also notice that we reference `.github/copilot-instructions.md`. This is important: the specialist mode is not a replacement for repository instructions; it's a layer on top that helps enforce them."
+
+While Copilot is done and you review the result (optional filler):
+
+"When the file is created, don't just assume it works. We validate in two ways:"
+
+"1) Does it show up in the mode selector? If not, reload VS Code."
+
+"2) Does it behave like a specialist? It should answer with our domain terms, mention our standards, and give actionable review feedback."
+
+"A good specialist answer references the actual codebase, uses consistent terminology, and calls out concrete gaps like missing `<response>` tags or unrealistic examples."
 
 ## Exercise 6 (Intro)
 
@@ -177,11 +195,43 @@ Say:
 
 "And now we'll start Exercise 6."
 
-While Agent is running (optional filler):
+While Agent is running (optional filler - say some of these while it runs):
 
-"Watch the plan and the file list. If it starts doing too much, stop and split the task into smaller chunks."
+"This prompt is a good example of how to work with Agent mode: it is broken into numbered tasks, with explicit outputs and quality gates. That helps the agent plan and keeps it from wandering."
 
-"For docs, the biggest risks are invented endpoints, invented data models, and broken links. Verify against the code."
+"Pay attention to two parts of the prompt:"
+
+"- The task breakdown: update API docs, create architecture docs, create contributing guidelines, update the README, then cross-reference everything."
+
+"- The quality standards: imperative mood, realistic data, working examples, consistent terminology. These are 'acceptance criteria' you can use when reviewing diffs."
+
+"As the agent runs, you will typically see status messages like 'Analyzing project structure' or 'Generating docs/API.md'. That's normal. What matters is what it proposes to change and whether those changes are correct."
+
+"Agent mode is powerful, but not authoritative. Your role is to supervise: read every diff before accepting. If you're unsure, reject and ask it to revise with a narrower instruction."
+
+"When reviewing documentation, the most common failure modes are:"
+
+"- Invented endpoints or paths: the agent might assume `/api/v1/auth/...` even if the code uses a different route. Always compare to controller attributes."
+
+"- Invented request/response shapes: verify against DTOs and action signatures."
+
+"- Wrong status codes: check what the controller actually returns in success and error cases."
+
+"- Broken links and anchors: markdown links are easy to get wrong; validate them after generation."
+
+"If the agent is slow: that's usually because it is reading many files and generating multiple documents. This is a good time to remind everyone about model choice: a stronger model is often better for multi-file consistency, but it can be slower."
+
+While the agent proposes file changes (optional filler):
+
+"Notice how it requests approval per file change. A safe workflow is: accept one file, skim it quickly for glaring issues, then accept the next."
+
+"If you see a systematic problem, like wrong base URLs, stop accepting and correct the prompt. Otherwise you'll accept the same mistake across multiple files."
+
+After Agent completes (optional filler about the result):
+
+"At the end, you should have a documentation suite, not just one file. The goal is a connected set of docs: API reference, architecture overview, contributing guidelines, and an updated README that links to them."
+
+"Before we consider it 'done', we do a quick sanity check: open each generated file, look for placeholders like TODO, verify examples use realistic data, and run the cross-reference validation prompt."
 
 ## After The Last Exercise (Closing Script)
 
