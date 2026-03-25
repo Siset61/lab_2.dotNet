@@ -802,8 +802,8 @@ Custom Chat Mode (.chatmode.md)
 ### Steps
 
 1. **Verify Chat Mode Directory Exists**
-   - In VS Code Explorer, check if `.github/chatmodes/` folder exists
-   - If not, right-click `.github/` -> New Folder -> name it `chatmodes`
+   - In VS Code Explorer, check if `.github/agents/` folder exists
+   - If not, right-click `.github/` -> New Folder -> name it `agents`
 
 2. **Create Documentation Specialist Chat Mode**
    - Switch to **Edit mode** in Copilot Chat

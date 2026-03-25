@@ -38,6 +38,28 @@ Say:
 
 "We will take a short break halfway through: 10 minutes if we're on time, otherwise 5 minutes."
 
+"Two quick Copilot tips before we start: context and model selection."
+
+"First, context: Copilot is only as good as what it can see. You can add context in a few ways:"
+
+"1) Select code in the editor and ask your question; Copilot uses the selection as context."
+
+"2) Use `@workspace` in the prompt when you want project-wide answers, like 'find all controllers' or 'audit documentation coverage'."
+
+"3) Attach files/folders to the chat context using the Add/plus button in the chat panel, or by dragging a file into the chat."
+
+"4) If you are asking about a specific file, name it explicitly, like `src/ClaimsApi/Controllers/ClaimsController.cs`."
+
+"Second, model selection: in the chat panel you can usually pick a model, or leave it on Auto. Here is a good rule of thumb:"
+
+"- Use Auto for day-to-day work."
+
+"- Use a faster/lighter model for quick Q&A, summaries, or small edits where latency matters."
+
+"- Switch to a stronger model for multi-step reasoning, Agent mode work, or when the first answer is shallow or inconsistent."
+
+"If you switch models and the answer changes a lot, treat that as a signal to add more context or tighten your prompt."
+
 ## 00:12-00:20 Environment Check
 
 Say:
