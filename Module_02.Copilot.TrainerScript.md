@@ -32,6 +32,8 @@ Say:
 
 "The structure is simple: I will demonstrate each exercise on screen, and you will replicate it. If you fall behind, don't panic: finish the step you're on, then re-join us on the next exercise."
 
+"During each exercise, I'll read the instructions, and I'll copy/paste the prompts into the meeting chat so you can copy them easily. I'll also paste them into Copilot Chat on my side so you can see the workflow end-to-end."
+
 "You have three helper files: `Requirements.md` for setup, `Lab_Script.md` for the exercises, and `Prompts.md` as a copy/paste reference."
 
 "Interaction: please stay muted by default and ask questions in the meeting chat. I will pause briefly after each exercise."
