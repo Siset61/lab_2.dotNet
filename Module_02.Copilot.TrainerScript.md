@@ -101,6 +101,10 @@ After finishing Exercise 1 (quick check):
 
 "Quick check: did everyone manage to get an explanation from the Smart Action and ask one follow-up question?"
 
+Q&A micro-pause (30-60 seconds):
+
+"Please type `OK` in the meeting chat if you're done, `1` if you're stuck, or `2` if Copilot isn't responding. We'll wait 30 seconds and then move on."
+
 ## Exercise 2 (Intro)
 
 Say:
@@ -108,6 +112,10 @@ Say:
 "Exercise 2 is where we start writing docs: we will generate XML documentation comments and verify them via IntelliSense."
 
 "And now we'll start Exercise 2."
+
+Safety mantra:
+
+"Before we accept any edits: preview the diff, verify it against the code, reject if you're unsure, and iterate with a tighter prompt."
 
 While Copilot proposes changes (optional filler):
 
@@ -118,6 +126,10 @@ While Copilot proposes changes (optional filler):
 After finishing Exercise 2:
 
 "Please hover one method and confirm the XML docs show up in the tooltip. That is our quick verification."
+
+Q&A micro-pause (30-60 seconds):
+
+"Type `OK` if you're done, `1` if you're stuck, `2` if Copilot isn't responding. We'll wait 30 seconds and then continue."
 
 ## Exercise 3 (Intro)
 
@@ -133,6 +145,10 @@ While Copilot generates `.github/copilot-instructions.md` (optional filler):
 
 "If you want better outputs, make your standards specific and testable, not generic."
 
+Q&A micro-pause (30-60 seconds):
+
+"Type `OK` if the file was created, `1` if you're stuck, `2` if Copilot isn't responding. We'll wait 30 seconds and then take a short break."
+
 Break decision:
 
 "We are roughly at the halfway point. If we are on time, we'll take a 10-minute break. If we're running late, we'll do 5 minutes."
@@ -141,7 +157,11 @@ Break decision:
 
 Say:
 
-"Please be back in a few minutes. When we return, we'll apply the standards across more files, create a documentation specialist mode, and finish with an Agent-mode documentation suite."
+"We'll take a short break now. Please be back at a specific time: I'll post the return time in the meeting chat."
+
+"When we return, we'll apply the standards across more files, create a documentation specialist agent, and finish with an Agent-mode documentation suite."
+
+"If you're behind after the break, use the `Exercise X/` folders as checkpoints to re-join us quickly."
 
 ## Exercise 4 (Intro)
 
@@ -157,27 +177,35 @@ While Copilot audits the workspace (optional filler):
 
 "If the workspace answer is too broad, narrow it to one folder or one controller at a time."
 
+Q&A micro-pause (30-60 seconds):
+
+"Type `OK` if you're done, `1` if you're stuck, `2` if Copilot isn't responding. We'll wait 30 seconds and then move on."
+
 ## Exercise 5 (Intro)
 
 Say:
 
-"Exercise 5 creates a specialized helper: a custom documentation specialist mode to review and enforce standards more consistently."
+"Exercise 5 creates a specialized helper: a custom documentation specialist agent to review and enforce standards more consistently."
 
 "And now we'll start Exercise 5."
 
-While Copilot creates the mode file (optional filler - say some of these while it runs):
+While Copilot creates the agent file (optional filler - say some of these while it runs):
 
 "This prompt is intentionally long. It's not just asking Copilot to write text; it's defining a specialist that you can reuse."
 
 "Notice the structure of the prompt:"
 
-"- The YAML header defines the mode metadata: a description and which tools it can use. Think of tools as permissions: what the assistant is allowed to do."
+"- The YAML header defines the agent metadata: a description and which tools it can use. Think of tools as permissions: what the assistant is allowed to do."
 
 "- The body defines three things: a persona, domain knowledge, and a quality checklist. That's how we make behavior consistent across conversations."
 
 "When you create this kind of specialist, make it concrete: include the vocabulary of your system and what 'good' looks like. Otherwise the assistant will drift to generic advice."
 
-"Also notice that we reference `.github/copilot-instructions.md`. This is important: the specialist mode is not a replacement for repository instructions; it's a layer on top that helps enforce them."
+"Also notice that we reference `.github/copilot-instructions.md`. This is important: the specialist agent is not a replacement for repository instructions; it's a layer on top that helps enforce them."
+
+Q&A micro-pause (30-60 seconds):
+
+"Type `OK` if the agent file was created and shows up in the selector, `1` if you're stuck, `2` if Copilot isn't responding. We'll wait 30 seconds and then continue."
 
 While Copilot is done and you review the result (optional filler):
 
@@ -196,6 +224,10 @@ Say:
 "Exercise 6 is Agent mode: we will ask Copilot to generate multiple documentation files and cross-references. Your job is supervision: review every diff and reject hallucinations."
 
 "And now we'll start Exercise 6."
+
+Safety mantra:
+
+"Agent mode can touch many files. Preview the diff, verify against code, reject if unsure, and tighten the prompt if you see systematic errors."
 
 While Agent is running (optional filler - say some of these while it runs):
 
@@ -234,6 +266,10 @@ After Agent completes (optional filler about the result):
 "At the end, you should have a documentation suite, not just one file. The goal is a connected set of docs: API reference, architecture overview, contributing guidelines, and an updated README that links to them."
 
 "Before we consider it 'done', we do a quick sanity check: open each generated file, look for placeholders like TODO, verify examples use realistic data, and run the cross-reference validation prompt."
+
+Q&A micro-pause (30-60 seconds):
+
+"Type `OK` if you're done, `1` if you're stuck, `2` if Copilot isn't responding. We'll wait 30 seconds and then wrap up."
 
 ## After The Last Exercise (Closing Script)
 

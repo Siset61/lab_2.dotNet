@@ -8,20 +8,20 @@ In this lab, you will use GitHub Copilot's documentation features to generate, i
 - Use Smart Actions and Chat modes to understand and document existing code
 - Generate comprehensive XML documentation comments with consistent formatting
 - Establish and enforce repository-wide documentation standards
-- Create specialized documentation workflows with custom chat modes
+- Create specialized documentation workflows with custom agents
 - Automate complete documentation suites using Agent Mode
 
 **What You'll Build:**
 - Complete XML documentation comments across the Claims API codebase
 - Repository documentation standards (`.github/copilot-instructions.md`)
-- Custom documentation specialist chat mode
+- Custom documentation specialist agent
 - Comprehensive documentation suite (API.md, ARCHITECTURE.md, CONTRIBUTING.md)
 
 ## Lab Learning Path
 
 1. **Introductory (30 min)**: Set up Copilot Chat modes, use Smart Actions to understand existing code, and generate initial XML documentation comments with consistent formatting
 2. **Intermediate (30 min)**: Establish repository-wide documentation standards with Custom Instructions, generate comprehensive API documentation, and apply standards across multiple files
-3. **Advanced (30 min)**: Tune instruction priority (personal vs. repository), create specialized documentation workflows with custom chat modes, and automate complete documentation suites using Agent Mode
+3. **Advanced (30 min)**: Tune instruction priority (personal vs. repository), create specialized documentation workflows with custom agents, and automate complete documentation suites using Agent Mode
 
 ## Prerequisites
 
@@ -593,7 +593,7 @@ Rather than documenting each file manually one-by-one, you'll use Copilot's proj
 - `src/ClaimsApi/Controllers/ReportsController.cs` - File upload endpoints
 - `src/ClaimsApi/Controllers/AuthController.cs` - Authentication and token generation
 - `src/ClaimsApi/Controllers/HealthController.cs` - Health check endpoint
-- `src/ClaimsApi/Services/ClaimsService.cs` - Business logic layer
+- `src/ClaimsApi/Services/ClaimService.cs` - Business logic layer
 
 ### Steps
 
@@ -682,7 +682,7 @@ Rather than documenting each file manually one-by-one, you'll use Copilot's proj
    - Switch to **Ask mode**
    - Run a comprehensive consistency check:
      ```text
-     @workspace Verify that all controller files (ClaimsController.cs, AttachmentsController.cs, AuthController.cs, HealthController.cs) now have complete XML documentation following our documentation standards.
+      @workspace Verify that all controller files (ClaimsController.cs, ReportsController.cs, AuthController.cs, HealthController.cs) now have complete XML documentation following our documentation standards.
 
      For each file, confirm:
      1. All public methods have XML documentation
@@ -728,7 +728,7 @@ Rather than documenting each file manually one-by-one, you'll use Copilot's proj
 
 ### Connection to Next Exercise
 
-Next, you'll create a custom chat mode specialized for documentation tasks. This will streamline future documentation work by providing a persistent, domain-aware documentation assistant.
+Next, you'll create a custom agent specialized for documentation tasks. This will streamline future documentation work by providing a persistent, domain-aware documentation assistant.
 
 ### Estimated Time
 
@@ -747,7 +747,7 @@ Next, you'll create a custom chat mode specialized for documentation tasks. This
 > - Documentation is code - commit it, review it, maintain it
 >
 > **Time Management:**
-> - If running short on time, focus on AttachmentsController.cs and AuthController.cs (most complex)
+> - If running short on time, focus on ReportsController.cs and AuthController.cs (most complex)
 > - HealthController.cs can be documented quickly (simpler)
 > - Verification step is critical - don't skip
 >
@@ -760,7 +760,7 @@ Next, you'll create a custom chat mode specialized for documentation tasks. This
 
 # Advanced Level
 
-## Exercise 5: Create Custom Chat Mode for Documentation Workflows
+## Exercise 5: Create Custom Agent for Documentation Workflows
 
 ### Prerequisites
 
@@ -771,17 +771,17 @@ Next, you'll create a custom chat mode specialized for documentation tasks. This
 
 ### Objective
 
-Create a specialized custom chat mode (`docs-specialist.agents.md`) that provides persistent, domain-aware documentation assistance. Learn instruction precedence (Repository > Organization) and how custom chat modes optimize recurring workflows.
+Create a specialized custom agent (`.github/agents/docs-specialist.agent.md`) that provides persistent, domain-aware documentation assistance. Learn instruction precedence and how custom agents optimize recurring workflows.
 
 ### Description
 
-Custom chat modes enable specialized AI assistants tailored for specific tasks. You'll create a "Documentation Specialist" mode that:
+Custom agents enable specialized AI assistants tailored for specific tasks. You'll create a "Documentation Specialist" agent that:
 - Maintains persistent context about the Claims API domain
 - Automatically enforces documentation standards
 - Proactively identifies documentation gaps
 - Provides consistent documentation guidance across conversations
 
-**What Makes Custom Chat Modes Powerful:**
+**What Makes Custom Agents Powerful:**
 - **Persistent behavior**: Mode remembers its role across conversations
 - **Domain knowledge**: Can encode project-specific terminology and patterns
 - **Specialized tools**: Can be configured to prioritize certain Copilot features
@@ -795,19 +795,19 @@ Repository Instructions (.github/copilot-instructions.md)
     | Medium Priority
 Organization Instructions (GitHub org settings)
     | Lowest Priority
-Custom Chat Mode (.chatmode.md)
+Custom Agent (.agent.md)
     | Adds specialized behavior on top
 ```
 
 ### Steps
 
-1. **Verify Chat Mode Directory Exists**
+1. **Verify Agent Directory Exists**
    - In VS Code Explorer, check if `.github/agents/` folder exists
    - If not, right-click `.github/` -> New Folder -> name it `agents`
 
-2. **Create Documentation Specialist Chat Mode**
+2. **Create Documentation Specialist Agent**
    - Switch to **Edit mode** in Copilot Chat
-   - Provide this prompt to create the chat mode:
+    - Provide this prompt to create the agent:
      ```text
      Create a new file at .github/agents/docs-specialist.agent.md with this content:
 
@@ -818,7 +818,7 @@ Custom Chat Mode (.chatmode.md)
        - search
      ---
 
-     # Documentation Specialist Chat Mode
+      # Documentation Specialist Agent
 
      ## Purpose
      Act as a Documentation Specialist for the Claims Management ASP.NET Core API. Focus on maintaining high-quality, consistent documentation that follows repository standards and serves both internal developers and external API consumers.
@@ -979,7 +979,7 @@ Custom Chat Mode (.chatmode.md)
      - Verify consistency: "Check documentation consistency across controllers"
      ```
    - Press Enter and review the proposed file creation
-   - Click **Accept** to create the chat mode file
+    - Click **Accept** to create the agent file
 
 3. **Verify Chat Mode Appears in VS Code**
    - Reload VS Code window (or restart Copilot extension)
@@ -1062,7 +1062,7 @@ Custom Chat Mode (.chatmode.md)
 
 ### Success Criteria
 
-- Custom chat mode file created at `.github/agents/docs-specialist.agent.md`
+- Custom agent file created at `.github/agents/docs-specialist.agent.md`
 - Mode appears in Copilot Chat mode selector dropdown
 - Mode demonstrates Claims API domain knowledge (status workflows, roles, architecture)
 - Mode automatically references repository documentation standards
@@ -1094,11 +1094,11 @@ Finally, you'll use Agent Mode to autonomously generate a complete documentation
 > **Instructor Note:**
 > **Common Issues:**
 > - **Mode doesn't appear in dropdown**: Ensure YAML frontmatter is correctly formatted (three dashes before and after), restart VS Code
-> - **Mode doesn't know domain**: Add more specific domain knowledge in the .chatmode.md file
+> - **Mode doesn't know domain**: Add more specific domain knowledge in the .agent.md file
 > - **Personal instructions not taking precedence**: Verify the file is created via `Chat: New Instructions File` → **User data** and labelled "User data" in `Chat: Configure Instructions`
 >
 > **Key Teaching Points:**
-> - Custom chat modes are persistent specialists (they "remember" their role)
+> - Custom agents are persistent specialists (they "remember" their role)
 > - Modes are complementary to repository instructions (not replacements)
 > - Personal instructions are user-specific and portable across projects
 > - More detailed persona = more consistent specialized behavior
@@ -1122,7 +1122,7 @@ Finally, you'll use Agent Mode to autonomously generate a complete documentation
 ### Prerequisites
 
 - Completion of Exercises 1-5
-- Files: `.github/copilot-instructions.md`, `.github/chatmodes/docs-specialist.chatmode.md`
+- Files: `.github/copilot-instructions.md`, `.github/agents/docs-specialist.agent.md`
 - All controller files with complete XML documentation
 - Understanding: Agent Mode workflow (define goals -> add context -> task prompt -> monitor -> review)
 
@@ -1180,7 +1180,7 @@ Agent Mode can execute multi-step documentation tasks across the project, genera
      Regenerate complete endpoint documentation based on current controller XML documentation.
 
      Requirements:
-     - Document ALL endpoints from ClaimsController.cs, AttachmentsController.cs, AuthController.cs, HealthController.cs
+      - Document ALL endpoints from ClaimsController.cs, ReportsController.cs, AuthController.cs, HealthController.cs
      - For each endpoint include:
        * HTTP method and full URL path (e.g., POST /api/v1/claims)
        * Brief description from XML summary
@@ -1503,7 +1503,7 @@ Congratulations! You've completed Module 02 and created a comprehensive document
 **Generated Artifacts:**
 - **Complete XML Documentation**: All controller files have XML documentation comments with summary, params, returns, response codes, examples
 - **Documentation Standards**: `.github/copilot-instructions.md` with comprehensive documentation guidelines
-- **Custom Chat Mode**: `.github/chatmodes/docs-specialist.chatmode.md` for specialized documentation assistance
+- **Custom Agent**: `.github/agents/docs-specialist.agent.md` for specialized documentation assistance
 - **API Reference**: `docs/API.md` with complete endpoint documentation and working examples
 - **Architecture Documentation**: `docs/ARCHITECTURE.md` explaining system design and design decisions
 - **Contributor Guidelines**: `docs/CONTRIBUTING.md` with documentation standards and checklists
@@ -1525,7 +1525,7 @@ Congratulations! You've completed Module 02 and created a comprehensive document
 
 **Advanced Level:**
 - Understanding instruction precedence hierarchy (Personal > Repository > Organization)
-- Creating custom chat modes with persistent, specialized behavior
+- Creating custom agents with persistent, specialized behavior
 - Using Agent Mode for autonomous multi-file documentation generation
 - Comprehensive quality validation and testing workflows
 
@@ -1543,7 +1543,7 @@ Congratulations! You've completed Module 02 and created a comprehensive document
    - Eliminate repetitive prompting
    - Ensure consistency at scale
 
-3. **Custom Chat Modes Enable Specialization:**
+3. **Custom Agents Enable Specialization:**
    - Persistent, domain-aware AI assistants
    - Maintain context across conversations
    - Proactively enforce quality standards
@@ -1644,14 +1644,14 @@ Congratulations! You've completed Module 02 and created a comprehensive document
 3. Restart VS Code
 4. Check Copilot status in VS Code status bar
 
-### Issue: Custom Chat Mode Not Appearing
+### Issue: Custom Agent Not Appearing
 
 **Symptoms:**
-- Created `.chatmode.md` file but not in dropdown
+- Created `.agent.md` file but not in dropdown
 - Mode selector doesn't show custom modes
 
 **Solutions:**
-1. Verify file location: Must be `.github/chatmodes/<name>.chatmode.md`
+1. Verify file location: Must be `.github/agents/<name>.agent.md`
 2. Check YAML frontmatter format:
    ```yaml
    ---
@@ -1739,7 +1739,7 @@ Congratulations! You've completed Module 02 and created a comprehensive document
 
 **Symptoms:**
 - Repository standards override personal preferences
-- Custom chat mode ignores personal instructions
+- Custom agent ignores personal instructions
 
 **Solutions:**
 1. **Verify location**: Personal instructions must be in a `*.instructions.md` file created via `Chat: New Instructions File` → **User data**
@@ -1790,7 +1790,7 @@ Congratulations! You've completed Module 02 and created a comprehensive document
    - When changing parameters, update XML documentation immediately
    - Keep ARCHITECTURE.md current as system evolves
 
-2. **Use Custom Chat Modes Consistently:**
+2. **Use Custom Agents Consistently:**
    - Activate docs-specialist mode for all documentation work
    - Create new modes for other specialized tasks
    - Share successful modes with team via Git
@@ -1899,7 +1899,7 @@ Congratulations! You've completed Module 02 and created a comprehensive document
 | File | Purpose | Location |
 |------|---------|----------|
 | **Repository Instructions** | Project-wide standards | `.github/copilot-instructions.md` |
-| **Custom Chat Modes** | Specialized assistants | `.github/chatmodes/<name>.chatmode.md` |
+| **Custom Agents** | Specialized assistants | `.github/agents/<name>.agent.md` |
 | **Personal Instructions** | User preferences | VS Code User data (`*.instructions.md`) |
 | **Documentation** | API reference, guides | `docs/` directory |
 
@@ -1935,7 +1935,7 @@ Provide specific, actionable feedback.
 
 You've successfully completed Module 02 and mastered GitHub Copilot's documentation features. You now have:
 - Complete, professional documentation for the Claims API
-- Reusable standards and custom chat modes
+- Reusable standards and custom agents
 - Skills to maintain and improve documentation over time
 
 **Next Module Preview:**
