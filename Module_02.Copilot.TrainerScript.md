@@ -1,17 +1,21 @@
-# Module 02 - Documentation With GitHub Copilot (2h) - Trainer Script (Light)
+# Module 02 - Documentation With GitHub Copilot (2h) - Trainer Script (Light, Simple English)
 
 This is a read-aloud script for the transitions and the first/last minutes.
 
 You will jump to `info/lab_2.dotNet/Module_02.DotNet.md` for the actual step-by-step instructions and prompts.
 
-## Timing (Suggested)
+## Timing (Suggested - ~2 hours)
 
 - 00:00-00:05 Courtesy wait
 - 00:05-00:12 Intro + how we will work
 - 00:12-00:20 Environment check
-- 00:20-01:00 Exercises 1-3
+- 00:20-00:32 Exercise 1 (12 min)
+- 00:32-00:45 Exercise 2 (13 min)
+- 00:45-01:00 Exercise 3 (15 min)
 - 01:00-01:10 Break (10 min if on time, otherwise 5 min)
-- 01:10-01:55 Exercises 4-6
+- 01:10-01:25 Exercise 4 (15 min)
+- 01:25-01:40 Exercise 5 (15 min)
+- 01:40-01:55 Exercise 6 (15 min)
 - 01:55-02:00 Wrap-up + survey + goodbye
 
 ## 00:00-00:05 Courtesy Wait
@@ -20,15 +24,25 @@ Say:
 
 "Hi everyone, we'll start in about five minutes to give people time to join. While we wait, please open VS Code, open the `Exercise 1` folder, and make sure GitHub Copilot Chat is working."
 
-If the session is recorded, start recording now and say:
+**IMPORTANT: Start recording now.**
+
+Say:
 
 "Quick reminder: this session is being recorded."
+
+### After 5 minutes, say:
+
+"Good afternoon everyone. Thank you for joining today's lab."
+
+"Let's get started."
 
 ## 00:05-00:12 Short Intro (What We Will Do)
 
 Say:
 
 "Today is a 2-hour hands-on lab focused on documentation with GitHub Copilot in a .NET Claims Management API."
+
+"By the end of this lab, you will have: generated XML documentation, applied consistent documentation standards, created a custom documentation specialist, and generated a full documentation suite with Agent mode."
 
 "The structure is simple: I will demonstrate each exercise on screen, and you will replicate it. If you fall behind, don't panic: finish the step you're on, then re-join us on the next exercise."
 
@@ -62,6 +76,14 @@ Say:
 
 "If you switch models and the answer changes a lot, treat that as a signal to add more context or tighten your prompt."
 
+While people open the lab (optional filler):
+
+"Please keep the lab script open on the side. It has the exact prompts."
+
+"I will show each prompt on screen and paste it into chat."
+
+"If Copilot is slow, please wait. It is reading your project context."
+
 ## 00:12-00:20 Environment Check
 
 Say:
@@ -70,9 +92,23 @@ Say:
 
 "Also, make sure you opened the whole `Exercise 1` folder, not a single file. Workspace context matters."
 
+Common issues and quick fixes:
+
+"- If you see 'Sign in required', click and authenticate with your GitHub account."
+
+"- If you see 'No subscription' or 'Not authorized', contact your admin or check your license."
+
+"- If Copilot Chat does not appear, restart VS Code."
+
 If someone is blocked and you are spending too long troubleshooting, say:
 
 "If troubleshooting is taking too long, please disconnect and register for another session later. There are also support calls available. I'll paste the official message at the end."
+
+You can copy/paste this text in the chat:
+
+```text
+If you experience issues with requirements and setup of lab environment, please consider to register again in another date and join our Support Calls available every Monday and Friday. Please write an email to TechnicalExcellenceSchools@generali.com and inform us about this.
+```
 
 ## Exercise Transitions
 
@@ -162,6 +198,26 @@ Say:
 "When we return, we'll apply the standards across more files, create a documentation specialist agent, and finish with an Agent-mode documentation suite."
 
 "If you're behind after the break, use the `Exercise X/` folders as checkpoints to re-join us quickly."
+
+### Message to post in chat BEFORE the break:
+
+```text
+Break time! We'll return at [TIME].
+Example: "Break time! We'll return at 14:15" (or "2:15 PM")
+Please be back on time so we can finish the lab together.
+```
+
+### When the break time is over, post in chat:
+
+```text
+We are starting again now. Please join us for Exercise 4.
+```
+
+### When you return from break, say:
+
+"Welcome back everyone."
+
+"We will now continue with Exercise 4."
 
 ## Exercise 4 (Intro)
 
@@ -286,6 +342,12 @@ Say:
 
 "I'll now paste the survey link. Please fill it in; it's very important for improving the program."
 
+## Labs Reminder and Prerequisites (5 minutes before closing)
+
+Say:
+
+"Now I will paste the survey link. Please fill it in."
+
 ### Copy/Paste (Official Text)
 
 LAB feedback survey:
@@ -308,3 +370,5 @@ TechnicalExcellenceSchools@generali.com and inform us about this.
 Say:
 
 "Thanks everyone for joining. Have a great day, and see you in the next module."
+
+**IMPORTANT: Stop recording and end the meeting (do not just leave).**
