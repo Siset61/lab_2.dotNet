@@ -42,7 +42,20 @@ Say:
 
 "Today is a 2-hour hands-on lab focused on documentation with GitHub Copilot in a .NET Claims Management API."
 
-"By the end of this lab, you will have: generated XML documentation, applied consistent documentation standards, created a custom documentation specialist, and generated a full documentation suite with Agent mode."
+"In this lab, you will use GitHub Copilot's documentation features to generate, improve, and maintain professional documentation for the Claims Management ASP.NET Core API. You'll master Chat modes (Ask, Edit, Agent, Plan), Smart Actions, Custom Instructions, chat participants, and autonomous documentation workflows."
+
+**What You'll Learn:**
+- Use Smart Actions and Chat modes to understand and document existing code
+- Generate comprehensive XML documentation comments with consistent formatting
+- Establish and enforce repository-wide documentation standards
+- Create specialized documentation workflows with custom agents
+- Automate complete documentation suites using Agent Mode
+
+**What You'll Build:**
+- Complete XML documentation comments across the Claims API codebase
+- Repository documentation standards (`.github/copilot-instructions.md`)
+- Custom documentation specialist agent
+- Comprehensive documentation suite (API.md, ARCHITECTURE.md, CONTRIBUTING.md)
 
 "The structure is simple: I will demonstrate each exercise on screen, and you will replicate it. If you fall behind, don't panic: finish the step you're on, then re-join us on the next exercise."
 
